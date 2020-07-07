@@ -27,7 +27,7 @@
     "@fancyapps/fancybox": "^3.5.7",
     "@glidejs/glide": "^3.4.1",
     "@types/jquery": "^3.3.32",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "normalize.scss": "^0.1.0",
     "picturefill": "^3.0.3",
     "requirejs": "^2.3.6",
