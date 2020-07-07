@@ -1,0 +1,787 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES Page accueil
+ * -----------------------------
+ * Styles de la page d'accueil
+ ** Section statistique
+ ** Section formation
+ ** Section promotionnelle
+ ** Section des profs
+ ** Section vie étudiante
+ ** Section placement emploi
+ ** Section des témoignages
+ ** Section de l'inscription
+ ** Section des médias sociaux
+ ** Section des onglets / accordeons
+ *** Onglets
+ ** Rendre les iframes responsives
+ */
+
+/* Styles de la page d'accueil */
+.accueil {
+
+  // Section des statistiques
+  .statistiques {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__titre {
+      color: $bleu;
+      line-height: 0.7;
+      padding-top: 75px;
+      margin: 0 auto;
+      @media (min-width: $mobile) {
+        @include fontSize(69px);
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .stat {
+      background-color: $bleu;
+      width: span(2 of 4);
+      margin-bottom: 15px;
+      min-height: 250px;
+      @media (min-width: $mobile) {
+        width: span(3 of 12);
+      }
+
+      &__border {
+        border: 1px $vert solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin: 15px;
+        min-height: 225px;
+      }
+
+      &Icone {
+        padding: 30px 0 0;
+      }
+
+      &Chiffre {
+        @include fontSize(36px);
+        font-weight: bolder;
+        color: $vert;
+        text-align: center;
+      }
+
+      &Texte {
+        color: $blanc;
+        @include fontSize(20px);
+        font-weight: 600;
+        padding: 0 15px 30px;
+        text-align: center;
+      }
+    }
+  }
+
+  // Section sur la formation
+  .formation {
+    padding-top: 50px;
+
+    &__titre {
+      width: span(4 of 4);
+      padding: 10px 0;
+      border: 1px solid $ligneGris;
+      text-align: center;
+      background-color: $blanc;
+      @media (min-width: $mobile) {
+        width: 51.2%;
+        margin-left: span(3 of 12)+gutter(12);
+        margin-bottom: 0;
+      }
+    }
+
+    .boutons {
+      padding: 20px 0;
+      @media (min-width: $mobile) {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      & .bouton {
+        width: span(4 of 4);
+        text-align: center;
+        margin: 0 0 20px;
+        background-color: $blanc;
+        @media (min-width: $mobile) {
+          width: span(4 of 12);
+        }
+      }
+    }
+  }
+
+  // Section Promotionnelle
+  .promo {
+    padding: 100px 0;
+    @media (min-width: $mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &__titre {
+      color: $vert;
+      @include fontSize(21px);
+      text-align: center;
+      line-height: 0.7;
+      @media (min-width: $mobile) {
+        @include fontSize(35px);
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    &__video {
+      @media (min-width: $mobile) {
+        width: span(8 of 12);
+      }
+    }
+
+    &__image {
+      display: block;
+      width: span(2 of 4);
+      @media (min-width: $mobile) {
+        width: 100%;
+      }
+
+      &s {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        @media (min-width: $mobile) {
+          width: span(4 of 12);
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+
+  // Section des profs
+  .profs {
+    padding: 50px 0;
+
+    .h1 {
+      padding: 10px 0;
+      background-color: $blanc;
+    }
+
+    &__conteneur {
+      &.mobile {
+        display: block;
+        @media (min-width: $mobile) {
+          display: none;
+        }
+      }
+      &.bureau {
+        display: none;
+        @media (min-width: $mobile) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    .prof {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+      @media (min-width: $mobile) {
+        width: span(3 of 12);
+        &:last-of-type {
+          margin-right: span(6 of 12)+gutter(12);
+        }
+      }
+
+      &__photo {
+        border-radius: 100%;
+        border: 5px $vert solid;
+      }
+
+      &__nom {
+        @include fontSize(22px);
+      }
+
+      &__responsabilite {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // Section vie étudiante
+  .etudiant {
+    padding: 50px 0 50px;
+    @media (min-width: $mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 0 100px;
+    }
+
+    &__titre {
+      @include fontSize(26px);
+      color: $vert;
+      text-align: center;
+      padding-top: 30px;
+      @media (min-width: $mobile) {
+        @include fontSize(52px)
+      }
+    }
+
+    &__sousTitre {
+      @include fontSize(20px);
+      color: $blanc;
+      text-align: center;
+      padding-top: 20px;
+      line-height: 0.8;
+      @media (min-width: $mobile) {
+        text-align: left;
+        @include fontSize(40px);
+        width: 100%;
+      }
+    }
+
+    &__video {
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+      }
+    }
+
+    .h4 {
+      color: $vert;
+      @media (min-width: $mobile) {
+        margin-left: span(1 of 6)+gutter(6);
+      }
+    }
+
+    &__texte {
+      margin-top: 20px;
+      padding-bottom: 50px;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+        margin: 0;
+        padding: 0;
+        border-top: 1px $bleuLigne solid;
+      }
+
+      &P {
+        color: $blanc;
+        margin: 10px 0 40px;
+        @media (min-width: $mobile) {
+          margin-left: span(1 of 6)+gutter(6);
+        }
+      }
+
+      & .bouton {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+
+  // Section placement emploi
+  .placement {
+    padding: 50px 0;
+
+    h3 {
+      @include fontSize(22px);
+      color: $bleu;
+      text-align: center;
+      border: 1px $ligneGris solid;
+      width: span(3 of 4);
+      margin: 0 auto;
+      @media (min-width: $mobile) {
+        width: 51.2%;
+        margin-left: span(3 of 12)+gutter(12);
+        @include fontSize(38px);
+      }
+
+      .pourcent {
+        @include fontSize(64px);
+        color: $bleu;
+      }
+    }
+
+    &__stat {
+      @include fontSize(100px);
+      color: $vertFonce;
+      font-weight: bolder;
+      display: block;
+    }
+
+    .border {
+      border: 8px $vert solid;
+      background-color: #f2f2f2;
+      @media (min-width: $mobile) {
+        display: flex;
+      }
+    }
+
+    &Emploi,
+    &Universite {
+      margin: 20px 0;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+      }
+    }
+  }
+
+  // Section des témoignages
+  .temoignages {
+    padding: 30px 0;
+
+    .h1 {
+      padding: 10px 0;
+      background-color: white;
+      margin-bottom: 50px;
+      @media (min-width: $mobile) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__photo {
+      border-radius: 100%;
+      border: 8px $vert solid;
+    }
+
+    &__nom {
+      @include fontSize(22px)
+    }
+
+    &__annee {
+      font-weight: bold;
+    }
+  }
+
+  // Section de l'inscription
+  .inscription {
+    padding: 50px 0;
+    @media (min-width: $mobile) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__titre {
+      @include fontSize(24px);
+      font-weight: bolder;
+      color: $vert;
+      text-align: center;
+      @media (min-width: $mobile) {
+        @include fontSize(70px);
+        width: 100%;
+      }
+    }
+
+    &Info {
+      color: $blanc;
+      @media (min-width: $mobile) {
+        width: span(6 of 12)+gutter(12);
+        border-top: 1px $bleuLigne solid;
+        border-bottom: 1px $bleuLigne solid;
+      }
+
+      & a:not(.bouton) {
+        color: $blanc;
+        text-decoration: none;
+        padding: 5px 20px 5px 0;
+        background-image: linear-gradient(180deg, ($bleu) 0%, ($bleu) 50%, ($vert) 50%, ($vert) 100%);
+        background-size: 100% 200%;
+        transition: background-position .3s ease-in-out;
+        transition-delay: 0.0s, 0.15s;
+        background-position-y: 35%;
+      }
+
+      & a:active:not(.bouton),
+      & a:hover:not(.bouton) {
+        background-position: -50% 100%;
+        font-weight: bold;
+        @include fontSize(15px);
+      }
+
+      .bouton {
+        display: block;
+        text-align: center;
+        margin: 30px auto;
+
+      }
+    }
+
+    &Tours {
+      @media (min-width: $mobile) {
+        width: span(3 of 12);
+      }
+      &__titre {
+        @include fontSize(40px);
+        color: $blanc;
+        font-weight: bolder;
+        text-align: center;
+        @media (min-width: $mobile) {
+          text-align: right;
+          line-height: 1;
+        }
+      }
+
+      &__date {
+        @include fontSize(22px);
+        color: $vert;
+        font-weight: bold;
+        text-align: center;
+        @media (min-width: $mobile) {
+          text-align: right;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+
+  // Section des médias sociaux
+  .medias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 100px 0 50px;
+    @media (min-width: $mobile) {
+      padding: 100px 0;
+    }
+    .feed {
+      width: span(4 of 4);
+      border: 5px $vert solid;
+      height: 300px;
+      overflow-y: scroll;
+      margin-bottom: 50px;
+      @media (min-width: $mobile) {
+        width: span( 6 of 12);
+        margin-bottom: 0;
+      }
+      #cff {
+        margin-top: 12px;
+        .cff-author {
+          border-bottom: 8px black solid;
+          margin-bottom: 0;
+          padding-bottom: 15px;
+        }
+      }
+
+      #ctf {
+        padding: 15px;
+        .ctf-header {
+          border-bottom: 8px black solid;
+          padding: 0 0 15px 0;
+        }
+      }
+
+    }
+  }
+
+  // Section des onglets / accordeons
+  .conception,
+  .integration,
+  .programmation,
+  .gestion {
+    &__titre {
+      & h3 {
+        padding: 15px 0 0;
+      }
+
+      &Conception:after,
+      &Integration:after,
+      &Programmation:after,
+      &Gestion:after {
+        content: '';
+        display: block;
+        width: 70%;
+        background-color: $vert;
+        height: 8px;
+        margin-top: 15px;
+        @media (min-width: $mobile) {
+          width: 40%;
+        }
+      }
+    }
+
+    .logiciels {
+      margin: 30px 0;
+
+      &__titre {
+        font-weight: normal;
+        width: 100%;
+        margin-bottom: 0;
+        @media (min-width: $mobile) {
+          margin-bottom: 10px;
+        }
+      }
+
+      .logiciel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-right: 20px;
+        margin-bottom: 10px;
+
+        .logiciels__nom {
+          visibility: hidden;
+          width: 120px;
+          background-color: black;
+          color: $blanc;
+          text-align: center;
+          border-radius: 5px;
+          padding: 5px 0;
+          position: absolute;
+          z-index: 1;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -60px;
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+        }
+
+         img.logiciels__logo {
+          height: 50px;
+        }
+
+        &:hover .logiciels__nom {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
+    & .etapes {
+      margin: 30px 0;
+      @media (min-width: $mobile) {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      &__titre {
+        font-weight: normal;
+        width: 100%;
+        margin: 10px 0;
+        @media (min-width: $mobile) {
+          display: block;
+        }
+      }
+
+      & img.etape__image {
+        width: span(4 of 4);
+      }
+
+      & .etape {
+        margin: 20px 0;
+        @media (min-width: $mobile) {
+          margin: 0;
+          width: span(3 of 10);
+          margin-right: gutter(10);
+        }
+        &__titre {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.logiciels, .etape {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*******************************
+ * Onglets
+ * Source initiale avant modification : https://codepen.io/mikestreety/pen/yVNNNm
+ ******************************/
+.accueil .onglets {
+  display: flex;
+  flex-wrap: wrap;
+
+  & .onglet4 {
+    @media (min-width: $mobile) {
+      width: span(3 of 12);
+    }
+  }
+
+  &__label {
+    order: 1; // Put the labels first
+    display: block;
+    padding: 20px 10px;
+    margin-right: 0.2rem;
+    margin-top: 0;
+    @include fontSize(18px);
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: solid 2px $ligneGris;
+    background-color: #f9f9f9;
+
+    @media (min-width: $mobile) {
+      display: inline;
+      margin: 0;
+      text-align: left;
+      border: 1px $ligneGris solid;
+      width: span(3 of 12)+gutter(12);
+      align-items: center;
+      padding-left: 0;
+    }
+
+    .arrow {
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background-image: url("../ressources/liaisons/images/arrow_down.svg");
+      vertical-align: bottom;
+      transition: all 0.3s ease;
+      margin-left: 10px;
+      @media (min-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + label {
+      &::before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
+
+      .arrow {
+        transform: rotate(180deg);
+      }
+
+      & + .onglet {
+        height: inherit;
+        display: block;
+        border: 5px $vert solid;
+        box-sizing: border-box;
+
+        @media (min-width: $mobile) {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: baseline;
+          .titre {
+            order: 1;
+            width: span(6 of 10);
+
+            h3 {
+              @include fontSize(32px);
+            }
+          }
+          .logiciels {
+            order: 0;
+            width: span(4 of 10);
+            margin: 0;
+          }
+          .etapes {
+            order: 2;
+            width: span(10 of 10);
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  & .onglet {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 10px 20px 50px;
+    background-color: #ececec;
+    @media (min-width: $mobile) {
+      margin-top: 30px;
+      padding: 20px span(1 of 12)+gutter(12);
+    }
+
+    & .h2 {
+      margin: 20px 0;
+      @media (min-width: $mobile) {
+        margin-left: span(1 of 12)+gutter(12);
+      }
+    }
+
+    & .contenu {
+      width: span(11 of 12);
+      margin-left: span(1 of 12)+gutter(12);
+      @media (min-width: $mobile) {
+        margin-left: span(2 of 12)+gutter(12);
+        width: span(8 of 12);
+      }
+    }
+
+    & .information__liste {
+      width: span(10 of 12)+gutter(6);
+      margin-left: span(2 of 12);
+      @media (min-width: $mobile) {
+        width: span(8 of 12);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        &Item {
+          width: span(4 of 8);
+          padding: 25px 10px;
+          margin: 0;
+          border-bottom: #D9D9D9 solid 3px;
+
+          &:nth-child(2n) {
+            border-left: #D9D9D9 solid 3px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .accueil .onglets .onglet,
+  .accueil .onglets__label {
+    order: initial;
+  }
+  .accueil .onglets__label {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* Rendre les iframes responsives */
+//Source : https://embedresponsively.com/
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

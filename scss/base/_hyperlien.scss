@@ -1,0 +1,70 @@
+/**
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+
+ * ----------------------------
+ * TABLE DES MATIÈRES - HYPERLIENS
+ * ----------------------------
+ * hyperliens de base
+ * Lien animé
+ * Icone lien externe
+ */
+
+/* Hyperliens de base */
+.hyperlien {
+  color: $noir;
+  text-decoration: none;
+  padding: 5px 20px 5px 0;
+  background-image: linear-gradient(180deg, ($blanc) 0%, ($blanc) 50%, ($vert) 50%, ($vert) 100%);
+  background-size: 100% 200%;
+  transition: background-position .3s ease-in-out;
+  transition-delay: 0.0s, 0.15s;
+  background-position-y: 35%;
+  &--hover,
+  &--active,
+  &:hover {
+    background-position: -50% 100%;
+  }
+}
+
+//------ Lien animé ----------
+.lienAnime {
+  display: inline-block;
+  position: relative;
+  outline: none;
+}
+
+.lienAnime::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: $vert;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.lienAnime:hover::before,
+.lienAnime:focus::before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+
+/* Icone lien externe */
+.lienExterne {
+  background-image: url("../ressources/liaisons/images/redirect.svg");
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  vertical-align: middle;
+  margin-left: 15px;
+  &--blanc {
+    background-image: url("../ressources/liaisons/images/redirect__blanc.svg");
+    width: 30px;
+    height: 30px;
+    vertical-align: baseline;
+  }
+}

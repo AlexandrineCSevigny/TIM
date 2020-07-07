@@ -1,0 +1,29 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES INTERACTIVITE
+ * -----------------------------
+ */
+
+.listeInteractivite {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  &--bleu {
+    background-color: $bleu;
+    padding: 50px;
+    p {
+      color: white;
+    }
+  }
+  &__item {
+    flex: 1 1 100%;
+  }
+}

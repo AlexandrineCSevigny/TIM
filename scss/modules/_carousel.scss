@@ -1,0 +1,104 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES CARROUSEL
+ * -----------------------------
+ * Styles du caroussel
+ */
+
+.glide {
+  &__conteneur {
+    padding: 0 span(1 of 12)+gutter(12);
+    margin: 0 auto;
+    border-top: 1px $ligneGris solid;
+    border-bottom: 1px $ligneGris solid;
+  }
+  &__bullets {
+    bottom: -15px;
+  }
+  &__bullet {
+    border: 1px $bleu solid;
+    width: 15px;
+    height: 15px;
+    &s {
+      bottom: -15px;
+    }
+    &:hover,
+    &:focus {
+      border: 2px $vert solid;
+    }
+    &--active {
+      background-color: $bleu;
+    }
+  }
+  &__arrow {
+    border: 1px $bleu solid;
+    color: $bleu;
+    font-family: "Raleway", sans-serif;
+    border-radius: 0;
+    &:hover {
+      border: 4px $vert solid;
+    }
+    &--right {
+      right: -2*span(1 of 12);
+    }
+    &--left {
+      left: -2*span(1 of 12);
+    }
+  }
+  &__slide {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    .flex {
+      text-align: center;
+    }
+    @media (min-width: $mobile) {
+      justify-content: space-between;
+    }
+    & .citation {
+      @media (min-width: $mobile) {
+        width: span(5 of 10);
+      }
+      @media (min-width: $mobile) {
+        &Icone {
+          position: absolute;
+          background-image: url("../ressources/liaisons/images/citation.svg");
+          display: block;
+          width: 125px;
+          height: 95px;
+          z-index: -1;
+
+          &--left {
+            top: 0;
+            left: 35%;
+          }
+
+          &--right {
+            transform: scale(-1);
+            bottom: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.arrow {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-image: url("../ressources/liaisons/images/arrow_down.svg");
+  &--left {
+    transform: rotate(90deg);
+  }
+  &--right {
+    transform: rotate(-90deg);
+  }
+}

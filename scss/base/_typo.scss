@@ -1,0 +1,146 @@
+/**
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+
+ * ----------------------------
+ * TABLE DES MATIÈRES - TYPOGRAPHIE
+ * ----------------------------
+ * Typographie responsive
+ *
+ */
+
+
+/**** Typographie responsive ****/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $fonteSecondaire;
+  @include fontSize(16px);
+  line-height: 1.375; /* facteur multiplicateur de la taille de la police 1.375x16=22 */
+  @media (min-width: 601px) {
+    line-height: 1.5;
+  }
+}
+
+h1,
+.titreNiveau1,
+.h2,
+h2,
+.titreNiveau2,
+.h2,
+h3,
+.titreNiveau3,
+.h3 {
+  font-family: $fontePrimaire;
+  font-weight: 500;
+  margin: 0;
+}
+
+h1,
+.titreNiveau1,
+.h1 {
+  @include fontSize(22px);
+  font-family: $fonteTertiaire;
+  color: $noir;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  border: 1px $ligneGris solid;
+  @media (min-width: $mobile) {
+    width: 51.2%;
+    margin-left: span(3 of 12)+gutter(12);
+    @include fontSize(40px);
+    padding-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 150px;
+      height: 8px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+  &--desktop {
+    @include fontSize(40px);
+    padding-bottom: 15px;
+    position: relative;
+    text-transform: uppercase;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 150px;
+      height: 8px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
+}
+
+h2,
+.titreNiveau2,
+.h2 {
+  @include fontSize(40px);
+  font-weight: 900;
+  text-transform: uppercase;
+  @media (min-width: $mobile) {
+    @include fontSize(70px);
+  }
+  &--desktop {
+    @include fontSize(70px);
+  }
+}
+
+h3,
+.titreNiveau3,
+.h3 {
+  @include fontSize(20px);
+  text-transform: uppercase;
+  font-weight: 900;
+  @media (min-width: $mobile) {
+    @include fontSize(40px);
+  }
+  &--desktop {
+    @include fontSize(40px);
+  }
+}
+
+h4,
+.titreNiveau4,
+.h4 {
+  @include fontSize(20px);
+  font-weight: 700;
+  margin: 0;
+  @media (min-width: $mobile) {
+    @include fontSize(22px);
+  }
+  &--desktop {
+    @include fontSize(22px);
+  }
+}
+h5,
+.h5 {
+  margin: 0;
+}
+
+.texte {
+  font-family: $fonteSecondaire;
+  @include fontSize(16px);
+  line-height: 1.375;
+  @media (min-width: $mobile) {
+    line-height: 1.5;
+  }
+  &--desktop {
+    line-height: 1.5;
+  }
+}
+
+.responsabilite {
+  font-weight: 700;
+}

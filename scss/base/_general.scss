@@ -1,0 +1,215 @@
+/**
+ * @Project Tim - Général
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+
+ * ----------------------------
+ * TABLE DES MATIÈRES - GÉNÉRAL
+ * ----------------------------
+ * Style de base
+ * Background
+ * Page 404
+ *
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $noir;
+}
+
+p {
+  margin: 0;
+}
+
+noscript.warning,
+div.warning {
+  display: block;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px #EB5757 solid;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  @media (min-width: $mobile) {
+    width: span(8 of 12);
+  }
+}
+div.succes {
+  display: block;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px $vert solid;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  @media (min-width: $mobile) {
+    width: span(8 of 12);
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  &.filter {
+    filter: saturate(0.3);
+    transition: filter 300ms ease;
+
+    &:hover {
+      filter: saturate(1);
+    }
+  }
+}
+
+// Gestion des images sans javascript
+img.lazyload {
+  display: none;
+}
+
+noscript > img {
+  display: block;
+}
+
+.js img {
+  display: block;
+}
+
+
+//------ Background ----------
+
+.background > .conteneur {
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-image: url("../ressources/liaisons/images/ligne_header_mobile.svg");
+  @media (min-width: $mobile) {
+    background-image: url("../ressources/liaisons/images/ligne_moyenne.svg");
+  }
+}
+
+.background--bleu > .conteneur {
+  background-image: url("../ressources/liaisons/images/ligne_bleu_mobile.svg");
+  @media (min-width: $mobile) {
+    background-image: url("../ressources/liaisons/images/ligne_bleu.svg");
+  }
+}
+
+.background--stat {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url("../ressources/liaisons/images/stat_background.jpg");
+  @media (min-width: $mobile) {
+    background-size: cover;
+  }
+}
+
+.background--prof {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url("../ressources/liaisons/images/prof_background.png");
+  @media (min-width: $mobile) {
+    background-size: contain;
+    background-position: bottom center;
+  }
+}
+
+.background--placement {
+  background-image: url("../ressources/liaisons/images/perspective_background.png");
+  background-size: cover;
+}
+
+.background--feed {
+  background-image: url("../ressources/liaisons/images/feed_background.jpg");
+  background-size: cover;
+}
+
+.background {
+  &--bleu {
+    background-color: $bleu;
+  }
+
+  .formation,
+  .etudiant,
+  .placement,
+  .inscription,
+  .realisations__div,
+  .form,
+  .projet,
+  .promo {
+    background-size: contain;
+  }
+
+  @media (max-width: 450px) {
+    .statistiques,
+    .temoignages {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: $mobile) {
+    .france {
+      background-size: cover;
+    }
+
+    .profs,
+    .realisations__div,
+    .stages,
+    .contact,
+    .form,
+    .page-erreur,
+    .sectionEtudiant,
+    .promo,
+    .inscription,
+    .temoignages,
+    .medias {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    .inscription,
+    .temoignages,
+    .etudiant {
+      background-size: cover;
+    }
+  }
+}
+
+// ------  Page 404 --------
+.page-erreur {
+  padding: 100px 0;
+  &__chiffre {
+    color: $vert;
+    font-family: "Montserrat", sans-serif;
+    @include fontSize(150px);
+    font-weight: bolder;
+    border-color: $bleuLigne;
+    text-align: center;
+    background-color: $bleu;
+    display: block;
+    @media (min-width: $mobile) {
+      @include fontSize(225px);
+    }
+    @media (max-width: 850px) {
+      @include fontSize(175px);
+    }
+  }
+  &__texte {
+    color: white;
+    @include fontSize(30px);
+    text-align: center;
+    @media (min-width: $mobile) {
+      @include fontSize(40px);
+    }
+  }
+}

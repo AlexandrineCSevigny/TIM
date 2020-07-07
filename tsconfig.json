@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es5",
+    "outDir":"./ressources/liaisons/js",
+    "sourceMap": true
+  },
+  "exclude": [
+    "./node_modules"
+  ]
+}
+

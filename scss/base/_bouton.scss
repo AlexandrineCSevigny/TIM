@@ -1,0 +1,66 @@
+/**
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+
+ * ----------------------------
+ * TABLE DES MATIÈRES - BOUTONS
+ * ----------------------------
+ * bouton de base
+ * bouton blanc
+ * bouton vert
+ * bouton pour les filtres
+ */
+
+/* Styles des boutons */
+.bouton {
+  display: inline-block;
+  border: $noir 4px solid;
+  color: black;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  &--hover,
+  &:hover,
+  &--active,
+  &:active {
+    transform: translateY(-5px);
+  }
+  /* Style des boutons blanc sur fond foncé */
+  &--blanc {
+    border-color: $blanc;
+    color: $blanc;
+    background-color: $bleu;
+    font-weight: bold;
+    @include fontSize(20px)
+  }
+
+  /* Bouton à contour vert */
+  &--vert {
+    color: $blanc;
+    font-weight: 900;
+    @include fontSize(26px);
+    text-transform: uppercase;
+    padding: 10px;
+    border: $vert 10px solid;
+    @media (min-width: $mobile) {
+      @include fontSize(40px);
+      padding: 0 2em;
+    }
+  }
+
+  /* Boutons pour les filtres */
+  &--filtre {
+    background-color: $blanc;
+    border: 4px solid $noir;
+    border-radius: 25px;
+    padding: 0.5em 2em;
+    font-weight: 700;
+    &Actif {
+      border-color: $bleu;
+      background-color: $bleu;
+      color: white;
+      font-weight: 700;
+      border-radius: 25px;
+      padding: 0.5em 2em;
+    }
+  }
+}

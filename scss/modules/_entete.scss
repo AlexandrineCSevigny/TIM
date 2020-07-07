@@ -1,0 +1,262 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES ENTETE
+ * -----------------------------
+ *
+ * ----------------------------
+ * TABLE DES MATIÈRES - ENTETE
+ * ----------------------------
+ * Style de l'entete
+ ** Styles propres à la page d'accueil
+ ** Styles de l'entete des autres pages
+ * Navigation
+ * Animations
+ */
+
+//*****************************************************
+//Styles de l'entete
+//*****************************************************
+.entete {
+  &__play {
+    border-radius: 100%;
+    transition: all 300ms ease;
+    background-color: $grisPale;
+    &:hover {
+      background-color: $vert;
+    }
+  }
+  // Styles propre à la page d'accueil
+  &--accueil {
+    background-color: #EFEFEF;
+    height: 100vh;
+
+    #principal {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: block;
+      transition: top 0.3s;
+      background-color: $bleu;
+      border-bottom: 5px $vert solid;
+      z-index: 5;
+    }
+
+    .conteneur:not(.nav) {
+      height: 100vh;
+      background-image: url(" ../ressources/liaisons/images/ligne_header_mobile.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: repeat-y;
+      margin: 0 10px;
+      @media (min-width: $mobile) {
+        margin: 0 auto;
+        background-image: url(" ../ressources/liaisons/images/ligne_header.svg");
+      }
+    }
+
+    .entete__logoLien--csf {
+      width: span(1 of 4);
+      margin-left: auto;
+      display: block;
+      @media (min-width: $mobile) {
+        width: span(2 of 12);
+      }
+    }
+
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 0 auto 50px;
+      height: 70vh;
+      background-image: url("../ressources/liaisons/images/cercle.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+      }
+
+      .entete__logoLien {
+        margin-bottom: 30px;
+        height: auto;
+        @media (min-width: $mobile) {
+          width: span(4 of 6);
+        }
+      }
+    }
+
+    .intro {
+      text-align: center;
+
+      .icone.arrow--down {
+        background-image: url("../ressources/liaisons/images/arrow_down.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 25px;
+        height: 25px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // Styles de l'entete des autres pages
+  &--autre {
+    background-color: $bleu;
+    border-bottom: $vert 5px solid;
+  }
+
+  .nav {
+    background-color: $bleu;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @media (min-width: $mobile) {
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    .entete__logoLien--csf {
+      display: none;
+      @media (min-width: $mobile) {
+        display: block;
+        background-image: url("../ressources/liaisons/images/logoCSF__blanc.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__logo {
+    &Lien {
+      &--tim {
+        display: block;
+        background-image: url("../ressources/liaisons/images/TIM_mobile_couleur.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 90px;
+        width: 100%;
+      }
+      @media (min-width: $mobile) {
+        height: 90px;
+        &--csf {
+          display: flex;
+          justify-content: flex-end;
+          width: span(2 of 12);
+          background-image: url("../ressources/liaisons/images/");
+        }
+        &--tim {
+          width: span(3 of 12);
+        }
+      }
+    }
+  }
+
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    a {
+      color: $blanc;
+      font-weight: bold;
+    }
+  }
+
+  .menu-menu-principal-container {
+    width: 100%;
+    @media (min-width: $mobile) {
+      width: span(6 of 12);
+    }
+  }
+}
+
+// Navigation
+#menu-menu-principal {
+  .current-menu-item a {
+    color: $vert;
+  }
+  a {
+    display: inline-block;
+    position: relative;
+    outline: none;
+
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: $vert;
+      transform-origin: bottom right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      transform-origin: bottom left;
+      transform: scaleX(1);
+    }
+  }
+}
+
+.js .entete--accueil {
+  #principal {
+    top: -200px;
+  }
+}
+
+// Animations
+.pulsate-bck {
+  animation: pulsate-bck 2s ease-in-out infinite both;
+}
+
+.slide-bottom {
+  animation: slide-bottom 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) infinite alternate both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2020-3-5 9:50:9
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info.
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation pulsate-bck
+ * ----------------------------------------
+ */
+@keyframes pulsate-bck {
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-bottom {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}

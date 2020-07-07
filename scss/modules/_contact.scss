@@ -1,0 +1,164 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES Page contact
+ * -----------------------------
+ * Responsable
+ * Formulaire
+ */
+
+
+.joindre {
+  .contact {
+    padding-top: 50px;
+  }
+
+  // Responsable
+  .prof {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px #EFEFEF solid;
+    padding: 20px 0;
+    @media (min-width: $mobile) {
+      width: span(3 of 12);
+      border: none;
+    }
+
+    &__conteneur {
+      @media (min-width: $mobile) {
+        border: 1px $ligneGris solid;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+      }
+    }
+
+    header {
+      width: 100%;
+      .h4 {
+        @include fontSize(18px);
+      }
+      @media (min-width: $mobile) {
+        text-align: center;
+      }
+    }
+
+    &__photo {
+      border-radius: 100%;
+      border: 4px $vert solid;
+      width: span(1 of 4);
+      @media (min-width: $mobile) {
+        border: 8px $vert solid;
+        width: span(3 of 3);
+      }
+    }
+
+    .info {
+      width: span(3 of 4);
+      @media (min-width: $mobile) {
+        width: span(3 of 3);
+      }
+    }
+    &__nom {
+      @include fontSize(22px);
+    }
+    &__responsabilite {
+      @include fontSize(14px);
+      font-weight: 700;
+    }
+    &__telephone {
+      @include fontSize(14px);
+      font-weight: 200;
+    }
+  }
+
+  // Formulaire
+  .form {
+    padding: 50px 0;
+
+    h2 {
+      color: $bleu;
+      text-align: center;
+      line-height: 1;
+
+      &::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transform: rotate(90deg);
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    &ulaire {
+      fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      label {
+        display: block;
+        @include fontSize(24px);
+        font-weight: bold;
+        color: $bleu;
+        width: fit-content;
+      }
+
+      input,
+      select {
+        border: 1px $bleu solid;
+        height: 45px;
+        width: 100%;
+      }
+
+      select {
+        border-radius: 0;
+        padding: 5px 15px;
+        font-weight: 200;
+        box-shadow: none;
+        background: white;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      textarea {
+        border: 1px $bleu solid;
+        height: 150px;
+        width: 100%;
+      }
+
+      .bouton {
+        width: 100%;
+        margin: 30px 0;
+        display: block;
+        border-color: $bleu;
+        @media (min-width: $mobile) {
+          width: span(6 of 12);
+          margin-left: auto;
+        }
+      }
+
+      .ctnForm {
+        margin: 20px 0;
+        @media (min-width: $mobile) {
+          width: span(6 of 12);
+          margin-left: span(3 of 12)+gutter(12);
+        }
+      }
+      .destinataire {
+        @media (min-width: $mobile) {
+          width: span(4 of 12);
+        }
+      }
+    }
+  }
+}

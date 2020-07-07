@@ -1,0 +1,87 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES PIED DE PAGE
+ * -----------------------------
+ * Styles du pied de page
+ * Logos
+ * Médias sociaux
+ * Copyright
+ */
+
+//*****************************************************
+//Styles du pied de page
+//*****************************************************
+
+.footer {
+  background-color: $grisPale;
+  color: $noir;
+  @media (min-width: $mobile) {
+    .flex {
+      display: flex;
+      align-items: center;
+
+    }
+  }
+  /* Logos */
+  &__logo {
+    @media (min-width: $mobile) {
+      width: span(4 of 12);
+      margin-left: span(4 of 12)+gutter(12);
+    }
+    &Lien {
+      display: block;
+      width: span(3 of 4);
+      margin: 0 auto;
+      padding: 50px 0 25px;
+      @media (min-width: $mobile) {
+        width: 100%;
+      }
+      &--csf {
+        width: span(2 of 4);
+        padding-top: 0;
+        padding-bottom: 75px;
+      }
+    }
+  }
+  /* Medias sociaux */
+  &__media {
+    margin: 0 auto;
+    width: span(3 of 4);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 25px 0;
+    @media (min-width: $mobile) {
+      width: span(4 of 12);
+      margin: 0 0 0 gutter(12);
+      justify-content: flex-end;
+    }
+    a {
+      width: 45px;
+      height: 45px;
+      transition: all 0.3s ease-out;
+      &:hover,
+      &:active {
+        transform: translateY(-5px);
+      }
+      @media (min-width: $mobile) {
+        margin-left: 10px;
+      }
+    }
+  }
+  /* Copyright */
+  &__copyright {
+    background-color: $blanc;
+    @include fontSize(14px);
+    padding: 20px 10px;
+    @media (min-width: $mobile) {
+      text-align: center;
+    }
+    &--alex {
+      font-weight: bold;
+    }
+  }
+}

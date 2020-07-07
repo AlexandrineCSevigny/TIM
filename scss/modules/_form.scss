@@ -1,0 +1,59 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES formulaire
+ * -----------------------------
+ * Styles des états des input
+ * Messages de rétroaction
+ */
+
+/* Styles des états des input */
+.input {
+  transition: all 300ms ease;
+  &--succes:not(#id) {
+    border: 4px $vertFonce solid;
+  }
+  &--erreur:not(#id) {
+    border: 4px #EB5757 solid;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  }
+  &:focus,
+  &:active{
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+    outline: none;
+  }
+}
+
+.validation__message {
+  padding: 5px 0;
+  font-weight: 500;
+  color: #EB5757;
+}
+
+/* Messages de rétroaction */
+div.warning {
+  display: block;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px #EB5757 solid;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  @media (min-width: $mobile) {
+    width: span(8 of 12);
+  }
+}
+
+div.succes {
+  display: block;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px $vert solid;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  @media (min-width: $mobile) {
+    width: span(8 of 12);
+  }
+}

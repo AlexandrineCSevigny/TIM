@@ -1,0 +1,42 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES DES VARIABLES
+ * -----------------------------
+ * Polices des caractères
+ * Palette de couleurs
+ * Couleur de base
+ * Autres couleurs
+ * Points de rupture
+ */
+
+/** Polices de caractères **/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900|Playfair+Display|Raleway:200,400,700&display=swap" rel="stylesheet"');
+
+$fontePrimaire : 'Montserrat', sans-serif;
+$fonteSecondaire : 'Raleway', sans-serif;
+$fonteTertiaire: 'Playfair Display', serif;
+
+/** Palette de couleurs **/
+// Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
+// Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
+
+/* Couleurs de base */
+$grisPale: #EFEFEF;
+$ligneGris: #D1D1D1;
+$vert: #00FFC2;
+$bleu: #13173D;
+$bleuLigne: #3D4271;
+$vertFonce: #1CE7B6;
+
+/* Autres couleurs */
+$noir: black;
+$blanc: white;
+
+/** Points de rupture **/
+$desktop : 601px;
+$mobile : 600px;

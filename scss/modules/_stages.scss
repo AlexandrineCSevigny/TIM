@@ -1,0 +1,138 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES Page Stages
+ * -----------------------------
+ */
+
+.stage {
+  .stages {
+    padding: 50px 0;
+    @media (min-width: $mobile) {
+      padding: 100px 0;
+    }
+    &Info {
+      @media (min-width: $mobile) {
+        display: flex;
+        justify-content: space-between;
+        &__1,
+        &__3 {
+          width: span(6 of 12);
+        }
+      }
+      h2 {
+        margin-top: 30px;
+        @include fontSize(24px);
+        line-height: 0.7;
+        width: 100%;
+        text-align: center;
+        @media (min-width: $mobile) {
+          @include fontSize(26px)
+        }
+      }
+    }
+    &__bloc {
+      border: 5px $vertFonce solid;
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      &Date {
+        width: 100%;
+        border-bottom: 10px $bleu solid;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        &Debut,
+        &Duree {
+          @include fontSize(22px);
+          font-family: "Montserrat", sans-serif;
+          font-weight: bold;
+          color: $bleu;
+          .date {
+            @include fontSize(36px);
+            font-weight: bolder;
+            display: block;
+          }
+        }
+      }
+      &Texte {
+        margin-top: 15px;
+        @media (min-width: $mobile) {
+          min-height: 175px;
+        }
+      }
+    }
+  }
+  .france {
+    position: relative;
+    &__titre {
+      position: absolute;
+      top: -25px;
+      text-align: center;
+      left: 0;
+      right: 0;
+      color: $bleu;
+      @include fontSize(25px);
+      @media (min-width: $mobile) {
+        top: -42px;
+        @include fontSize(40px);
+      }
+    }
+    &__info {
+      @media (min-width: $mobile) {
+        display: flex;
+        justify-content: space-between;
+
+      }
+    }
+    &__infoTexte {
+      @include fontSize(30px);
+      color: white;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 300;
+      text-align: center;
+      padding: 30px 0;
+      @media (min-width: $mobile) {
+        width: span(5 of 12);
+        align-self: center;
+        border: 1px $bleuLigne solid;
+      }
+      & .france {
+        color:  $vert;
+        font-weight: 900;
+      }
+    }
+    &__infoImage {
+      @media (min-width: $mobile) {
+        width: span(7 of 12);
+        margin: 30px 0;
+      }
+    }
+  }
+  .info {
+    padding: 50px 0;
+    @media (min-width: $mobile) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .bouton {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0 0;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+      }
+    }
+  }
+  .temoignages {
+    &__photo {
+      border-radius: 100%;
+      border: 8px $vert solid;
+    }
+  }
+}

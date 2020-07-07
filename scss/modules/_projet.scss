@@ -1,0 +1,243 @@
+/**
+ * @Project TIM
+ * @author Alexandrine C. Sévigny <asevigny@outlook.fr>
+ * @date Février 2020 - Version 1.0.0
+
+ * -----------------------------
+ * TABLE DES MATIÈRES - STYLES Page d'un projet
+ * -----------------------------
+ * Section du projet
+ * Section de l'étudiant
+ * Section des intérêts
+ */
+
+.une-realisation {
+
+  img {
+    filter: saturate(1);
+  }
+
+  .arrow {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-image: url("../ressources/liaisons/images/arrow_down.svg");
+    vertical-align: bottom;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    transform: rotate(90deg);
+  }
+  /* Section du projet */
+  .projet {
+    padding: 20px 0;
+    img {
+      border: 3px $noir solid;
+    }
+    .retour {
+      margin: 20px 0;
+      display: inline-block;
+    }
+    h1 {
+      margin-top: 20px;
+      margin-bottom: 30px;
+      @media (min-width: $mobile) {
+
+      }
+    }
+    &Info {
+      @media (min-width: $mobile) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+    &Info__images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin-right: gutter(12);
+      width: 100%;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+      }
+      a {
+        display: block;
+        margin-bottom: 10px;
+        &:not(:first-child) {
+          width: span(1.2 of 4);
+          margin-right: gutter(5);
+        }
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &Info__description {
+      margin: 30px 0;
+      @media (min-width: $mobile) {
+        width: span(6 of 12);
+        margin: 0;
+      }
+      &Techno,
+      &Techno p{
+        font-weight: bold;
+        display: inline-block;
+        margin: 5px 0 0;
+      }
+    }
+  }
+  /* Section de l'étudiant */
+  .etudiant {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    @media (min-width: $mobile) {
+      align-items: flex-start;
+    }
+    &Nom {
+      color: $vert;
+      margin-bottom: 20px;
+      @include fontSize(30px);
+      text-align: center;
+      width: 100%;
+      @media (min-width: $mobile) {
+        @include fontSize(48px);
+        text-align: left;
+      }
+    }
+    &div {
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      margin: 20px 0;
+      @media (min-width: $mobile) {
+        margin: 0;
+      }
+      &.image {
+        order: 1;
+        width: 100%;
+        @media (min-width: $mobile) {
+          order: 2;
+          width: 49%;
+          display: flex;
+          flex-direction: column;
+        }
+        .image__div {
+          width: span(2 of 4);
+          img {
+            border-radius: 100%;
+            border: $vert 10px solid;
+          }
+        }
+      }
+      &.presentation {
+        order: 2;
+        margin: 30px 0 20px;
+        @media (min-width: $mobile) {
+          order: 1;
+          margin: 0;
+          width: 51%;
+        }
+      }
+    }
+    &Lien {
+      width: span(2 of 4);
+      @media (min-width: $mobile) {
+        margin: 20px 0;
+      }
+      .bouton {
+        margin: 5px 0;
+        width: span(2 of 2);
+        text-align: center;
+        padding: 0.5em;
+        .lienExterne {
+          width: 20px;
+          height: 20px;
+          margin: 0;
+        }
+      }
+    }
+    &Presentation {
+      border: 1px $bleuLigne solid;
+    }
+    &Interet {
+      margin-top: 30px;
+      @include fontSize(22px);
+      font-weight: 600;
+      text-transform: none;
+    }
+  }
+
+  /* Sections des intérêts */
+  .interet {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    &__nom {
+      width: span(2 of 4);
+      @media (min-width: $mobile) {
+        width: span(3 of 6);
+      }
+    }
+  }
+  .barre {
+    width: span(2 of 4);
+    background-color: $grisPale;
+    @media (min-width: $mobile) {
+      width: span(3 of 6);
+    }
+    &__interne {
+      background-color: $vertFonce;
+      padding: 5px 0;
+      &.interet__ {
+        &1 {
+          width: 10%;
+        }
+
+        &2 {
+          width: 20%;
+        }
+
+        &3 {
+          width: 30%;
+        }
+
+        &4 {
+          width: 40%;
+        }
+
+        &5 {
+          width: 50%;
+        }
+
+        &6 {
+          width: 60%;
+        }
+
+        &7 {
+          width: 70%;
+        }
+
+        &8 {
+          width: 80%;
+        }
+
+        &9 {
+          width: 90%;
+        }
+
+        &10 {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
